@@ -1,0 +1,344 @@
+/* Default settings */
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face
+{
+    font-family: Oswald;
+    src: url(../fonts/Oswald/static/Oswald-Regular.ttf);
+}
+
+@font-face
+{
+    font-family: Kanit;
+    src: url(../fonts/Kanit/kanit-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montsarat;
+    src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
+}
+
+/* Default settings on visible */
+body 
+{
+    background: #0f0f0f;
+}
+
+/* Styling the menu */
+.menu 
+{
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the menu + */
+.menu li 
+{
+    position: absolute;
+    list-style: none;
+    left: 0;
+    transform-origin: 100px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(80px);
+}
+
+/* Give it an animation */
+.menu.active li 
+{
+    transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+/* Styling all the buttons around it */
+.menu li a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #595959;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -8 * var(--i)));
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+    color: #fff;
+    transition: 0.5s;
+}
+
+/* Create a hover effect */
+.menu li a:hover
+{
+    color: #BCFD4C;
+}
+
+/* Styling the + button */
+.toggle 
+{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #595959;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(160, 152, 152, 0.15);
+    font-size: 2em;
+    transition: transform 1.25s;
+    color: #fff;
+    transition: 0.5s;
+}
+
+/* Give it a hover */
+.toggle:hover 
+{
+    color: #BCFD4C;
+}
+
+/* Create again a animation */
+.menu.active .toggle
+{
+    transform: rotate(315deg);
+}
+
+/* putting the landing opening on place */
+.po-landing-opening
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 7%;
+    padding: 20px;
+    width: 100%;
+    font-family: Oswald;
+}
+
+/* Styling the landing text inside the opening */
+.po-landing-text, .po-landing-animation
+{
+    font-size: 2.4vw;
+    color: #dbdbdb;
+    text-transform: uppercase;
+}
+
+/* styling the box with the text in it */
+.po-landing-text
+{
+    position: relative;
+    left: 5%;
+}
+
+/* Styling my name */
+.po-landing-name
+{
+    position: relative;
+    font-size: 3.5vw;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* bring it up front */
+.po-landing-name, h2
+{
+    position: relative;
+    z-index: 5;
+}
+
+/* Changing the font of the header */
+h2 
+{
+    font-size: 1.3vw;
+    font-family: 'Kanit';
+    color: #BCFD4C;
+}
+
+/* Background text for some fill on the website */
+h3 
+{
+    position: absolute;
+    top: -8vw;
+    left: 0;
+    z-index: 0;
+    font-size: 18vw;
+    color: rgb(16, 16, 16);
+}
+
+/* background text styling */
+.po-last-name
+{
+    position: absolute;
+    top: 18vw;
+    left: 25vw;
+}
+
+.po-landing-animation
+{
+    width: 100%;
+}
+
+.po-landing-animation-header-text
+{
+    position: relative;
+    top: 1.6vw;
+    font-size: 1.3vw;
+    font-family: 'Kanit';
+    color: #bababa;
+}
+
+/* Styling the typewrite text */
+.typewrite
+{
+    text-decoration: none;
+    color: rgb(188, 253, 76);
+}
+
+/* Styling the animation text */
+.po-landing-animation-text
+{
+    position: relative;
+    font-size: 2.5vw;
+}
+
+/* Styling the text above the animation */
+.po-landing-animation-header
+{
+    position: relative;
+    top: 3.9vw;
+}
+
+/* Styling the mac OS window */
+/* Style the base window */
+.po-mac-window 
+{
+    position: relative;
+    background-color: #2d2d2d2d;
+    border: 1px solid #000;
+    left: 15vw;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 36vw;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* need to get good font like a text editor */
+    z-index: 10;
+}
+
+/* Placing the buttons next to eachother */
+.po-mac-window-header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 5px 5px 0 0;
+    padding: 7px;
+}
+
+/* Styling the header text */
+.po-mac-header-title
+{
+    margin: 2px;
+    color: #fff;
+    font-size: 1.3vw;
+}
+
+/* create some space between the buttons */
+.po-mac-window-controls
+{
+    display: flex;
+    gap: 7px;
+    margin-left: 10px;
+}
+
+/* Give the buttons a better look */
+.po-mac-window-controls button
+{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.po-mac-window-controls button:hover
+{
+    color: #0078d4;
+}
+
+.po-mac-window-content
+{
+    padding: 20px;
+    color: #fff;
+    font-family: 'Montsarat';
+}
+
+/* Create some space in the code editor */
+.content
+{
+    position: relative;
+    margin-bottom: 5%;
+    margin-left: 2.7vw;
+}
+
+/* Give the opentag a style */
+.open
+{
+    position: relative;
+    margin-bottom: 5%;
+}
+
+/* Styling the contact button */
+/* The entire button */
+.po-contact-button a
+{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    top: 2.5vw;
+    border: 2px solid #BCFD4C;
+    transition: 0.5s;
+    font-size: 1.7vw;
+    padding: 5px 11px 5px 11px;
+    border-radius: 7px;
+}
+
+.po-contact-button a:hover
+{
+    background-color: #BCFD4C;
+    color: #000;
+}
+
+.po-landing-icons
+{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    top: 7vw;
+    justify-content: space-around;
+}
+
+.po-landing-icon
+{
+    display: flex;
+    position: relative;
+    font-size: 2.6vw;
+    background-color: #2d2d2d2d;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    padding: 16px;
+    border-radius: 12px;
+}
