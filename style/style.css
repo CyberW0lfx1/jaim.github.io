@@ -1,0 +1,560 @@
+/* Default settings */
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face
+{
+    font-family: Oswald;
+    src: url(../fonts/Oswald/static/Oswald-Regular.ttf);
+}
+
+@font-face
+{
+    font-family: Kanit;
+    src: url(../fonts/Kanit/kanit-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montsarat;
+    src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
+}
+
+/* Default settings on visible */
+body 
+{
+    background: #0f0f0f;
+}
+
+/* Styling the menu */
+.menu 
+{
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Styling the menu + */
+.menu li 
+{
+    position: absolute;
+    list-style: none;
+    left: 0;
+    transform-origin: 100px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(80px);
+}
+
+/* Give it an animation */
+.menu.active li 
+{
+    transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+/* Styling all the buttons around it */
+.menu li a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #2d2d2d;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -8 * var(--i)));
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    color: #BCFD4C;
+    transition: 0.5s;
+}
+
+/* Create a hover effect */
+.menu li a:hover
+{
+    color: #0f0f0f;
+}
+
+/* Styling the + button */
+.toggle 
+{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #2d2d2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    font-size: 2em;
+    transition: transform 1.25s;
+    color: #BCFD4C;
+    transition: 0.5s;
+}
+
+/* Give it a hover */
+.toggle:hover 
+{
+    color: #0f0f0f;
+}
+
+/* Create again a animation */
+.menu.active .toggle
+{
+    transform: rotate(360deg);
+}
+
+/* putting the landing opening on place */
+.po-landing-opening
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 7%;
+    padding: 20px;
+    width: 100%;
+    font-family: Oswald;
+}
+
+/* Styling the landing text inside the opening */
+.po-landing-text, .po-landing-animation
+{
+    font-size: 2.4vw;
+    color: #dbdbdb;
+    text-transform: uppercase;
+}
+
+/* styling the box with the text in it */
+.po-landing-text
+{
+    position: relative;
+    left: 8%;
+}
+
+/* Styling my name */
+.po-landing-name
+{
+    position: relative;
+    font-size: 3.5vw;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* bring it up front */
+.po-landing-name, h2
+{
+    position: relative;
+    z-index: 5;
+}
+
+/* Changing the font of the header */
+h2 
+{
+    font-size: 1.3vw;
+    font-family: 'Kanit';
+    color: #BCFD4C;
+}
+
+/* Background text for some fill on the website */
+h3 
+{
+    position: absolute;
+    top: -8vw;
+    left: 0;
+    z-index: 0;
+    font-size: 18vw;
+    color: rgb(16, 16, 16);
+}
+
+/* background text styling */
+.po-last-name
+{
+    position: absolute;
+    top: 18vw;
+    left: 25vw;
+}
+
+/* give the animation a full width box */
+.po-landing-animation
+{
+    width: 100%;
+}
+
+/* styling the text in the header */
+.po-landing-animation-header-text
+{
+    position: relative;
+    top: 1.6vw;
+    font-size: 1.3vw;
+    font-family: 'Kanit';
+    color: #bababa;
+    text-transform: lowercase;
+}
+
+/* Styling the typewrite text */
+.typewrite
+{
+    text-decoration: none;
+    color: rgb(188, 253, 76);
+}
+
+/* Styling the animation text */
+.po-landing-animation-text
+{
+    position: relative;
+    font-size: 2.5vw;
+}
+
+/* Styling the text above the animation */
+.po-landing-animation-header
+{
+    position: relative;
+    top: 3.9vw;
+}
+
+/* Styling the mac OS window */
+/* Style the base window */
+.po-mac-window 
+{
+    position: relative;
+    background-color: #2d2d2d2d;
+    left: 20vw;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 36vw;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* need to get good font like a text editor */
+}
+
+/* Placing the buttons next to eachother */
+.po-mac-window-header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 5px 5px 0 0;
+    padding: 7px;
+}
+
+/* create some space between the buttons */
+.po-mac-window-controls
+{
+    display: flex;
+    gap: 7px;
+    margin-left: 10px;
+}
+
+/* Give the buttons a better look */
+.po-mac-window-controls button
+{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+/* .po-mac-window-controls button:hover
+{
+    color: #0078d4;
+} */
+
+ /* Styling the content inside the window */
+.po-mac-window-content
+{
+    padding: 20px;
+    color: #fff;
+    font-family: 'Montsarat';
+    font-size: 1.1vw;
+}
+
+/* Styling the opening tag php */
+.tag
+{
+    margin-bottom: 5%;
+    color: #539CD6;
+}
+
+/* Asign color to the variable */
+.variable_color
+{
+    color: #69C0FE;
+}
+
+/* Asign color the the variable */
+.data
+{
+    color: #C39178;
+}
+
+/* Create some space in the code editor */
+.content
+{
+    position: relative;
+    margin-bottom: 5%;
+    margin-left: 2.7vw;
+}
+
+/* Give the opentag a style */
+.open
+{
+    position: relative;
+    margin-bottom: 5%;
+}
+
+/* Styling the contact button */
+/* The entire button */
+.po-contact-button a
+{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    top: 2.5vw;
+    border: 2px solid #BCFD4C;
+    transition: 0.5s;
+    font-size: 1.7vw;
+    padding: 5px 11px 5px 11px;
+    border-radius: 7px;
+}
+
+/* Change style when user hovers over the button */
+.po-contact-button a:hover
+{
+    background-color: #BCFD4C;
+    color: #000;
+}
+
+/* Set the right position of the icons  */
+.po-landing-icons
+{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    top: 7vw;
+    justify-content: space-evenly;
+}
+
+/* Styling the icons */
+.po-landing-icon 
+{
+    display: flex;
+    position: relative;
+    font-size: 2vw;
+    background-color: #2d2d2d2d;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+/* style after hover */
+.po-landing-icon:hover
+{
+    width: 20vw;
+    border: solid 1px #BCFD4C;
+}
+
+/* Style after the hover */
+.po-landing-icon:hover:hover::after{
+    content: "Projects Done: 10";
+    font-size: 1.4vw;
+    color: #bababa;
+    font-family: Montsarat;
+    font-weight: 600;
+    margin-left: 2vw;
+}
+
+/* Styling the about me div */
+/* Styling the about me header title */
+.po-about-me
+{
+    position: relative;
+    top: 14vw;
+    left: 8.5%;
+    height: auto;
+    width: 83vw;
+}
+
+/* Style line after the title */
+.line-1
+{
+    position: relative;
+    width: 4.5em;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 1.7vw;
+    font-family: Kanit;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #BCFD4C;
+    display: inline-block;
+}
+
+/* Give the header a position */
+.po-about-me-header {
+    position: relative;
+}
+
+/* Create a horizontal line */
+.po-about-me-header::before {
+    content: '';
+    position: absolute;
+    top: 1.4vw;
+    left: 9vw;
+    width: 12%;
+    height: 1px;
+    background-color: #fff;
+}
+
+/* Animate the text and the blink cursor About me*/
+.anim-typewriter
+{
+    animation: typewriter 1s steps(9) 1s 1 normal both,
+               blinkTextCursor 500ms steps(9) infinite normal;
+}
+/* The length for the blink cursor */
+@keyframes typewriter
+{
+    from{width: 0;}
+    to{width: 4.5em;}
+}
+
+/* Let the blinkcursor blink */
+@keyframes blinkTextCursor
+{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+}
+
+/* Animate the text and the blink cursor Skills*/
+.anim1-typewriter
+{
+    animation: typewriter1 1s steps(6) 1s 1 normal both,
+               blinkTextCursor1 500ms steps(6) infinite normal;
+}
+/* The length for the blink cursor */
+@keyframes typewriter1
+{
+    from{width: 0;}
+    to{width: 2.5em;}
+}
+
+/* Let the blinkcursor blink */
+@keyframes blinkTextCursor1
+{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+}
+
+/* make the body more responsive */
+.po-about-me-body
+{
+    display: flex;
+}
+
+/* Styling the body of the about me section */
+/* Positioning and styling the profile pic */
+.po-about-me-picture, .po-about-me-text
+{
+    width: 50%;
+}
+
+/* Style the picture */
+.po-about-me-picture img
+{
+    position: relative;
+    height: 33vw;
+    top: 5vw;
+    left: 5vw;
+    border-radius: 10px;
+}
+
+/* Style the body title */
+.po-about-me-text-question
+{
+    color:#bcfd4c;
+    font-size: 1.6vw;
+    font-family: Oswald; 
+    text-transform: uppercase;
+    margin-bottom: 2vw;
+}
+
+/* Style the about me text */
+.po-about-me-text
+{
+    position: relative;
+    font-size: 1.3vw;
+    font-family: Kanit;
+    color: #bababa;
+    top: 5vw;
+}
+
+/* create a little space between the 2 texts */
+.po-about-me-text p
+{
+    margin-bottom: 2vw;
+}
+
+/* Fix position of the 2 buttons */
+.po-about-me-buttons
+{
+    display: flex;
+    margin-top: 15%;
+    justify-content: space-around;
+    font-size: 1.4vw;
+}
+
+/* Style the 2 buttons */
+.po-about-me-info, .po-about-me-projects
+{
+    display: flex;
+    width: 30%;
+    background-color: #2d2d2d2d;
+    padding: 15px 15px 15px 15px;
+    border-radius: 9px;
+    transition: 0.5s;
+}
+
+/* Hover effect for both buttons */
+.po-about-me-info:hover, .po-about-me-projects:hover
+{
+    background-color:#BCFD4C;
+    color: black;
+}
+
+/* Fix position */
+.po-about-me-button-text
+{
+    margin-left: 1vw;
+}
+
+/* fix the size */
+.po-about-me-title-text
+{
+    font-size: 0.7vw;
+}
+
+/* 
+Note:
+- fix hover 3 icons on the home screen
+- fix photo on about me section 
+- fix the 2 buttons under the text 1 flip animation and one to the projects
+- fix text inside the mac window px -> vw
+- Create a tooltip for the toggle
+- Skills tab only when i have a good idea
+*/
